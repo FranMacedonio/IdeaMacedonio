@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <h2>Bienvenido</h2>
     </>
   );
 }
