@@ -1,5 +1,6 @@
 import './NavBar.css'
 import Sonic from './logo.js';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined.js';
 
 const NavBar = () => {
 
@@ -12,8 +13,11 @@ const NavBar = () => {
                 <li>Historia</li>
                 <li>Crear Personaje</li>
             </ul>
+            <div className='carrito'>
+                <ShoppingCartIcon color="success" fontSize="large" />
+                <h3>0</h3>
+            </div>
         </div>
-
     );
 
 }

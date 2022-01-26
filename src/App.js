@@ -1,11 +1,16 @@
 import './App.css';
 import NavBar from './components/NavBar';
+import MediaCard from './components/items.js';
 
 function App() {
   return (
     <>
       <NavBar />
-      <h2>Bienvenido</h2>
+      <div className='items'>
+        <MediaCard/>
+        <MediaCard/>
+        <MediaCard/>
+      </div>
     </>
   );
 }

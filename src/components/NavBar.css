@@ -8,9 +8,6 @@ ul {
     display: flex;
     justify-content: space-between;
     width: 700px;
-    position: absolute;
-    top: 25%;
-    left: 200px;
 }
 ul li{
     font-size: 48px;
@@ -20,16 +17,19 @@ ul li:hover{
 }
 .navbar{
     background-color: rgb(105, 105, 105);
-    position: relative;
     height: 120px;
     border-bottom: 5px solid black;
-}
-.imagen{
-    position: absolute;
-    left: 50px;
-    top: 9px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .imagen img{
     border-radius: 50%;
+}
+
+.carrito {
+    position: relative;
+
 }
