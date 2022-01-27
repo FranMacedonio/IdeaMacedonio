@@ -25,11 +25,25 @@ ul li:hover{
     align-items: center;
 }
 
-.imagen img{
-    border-radius: 50%;
+.imagen {
+    border: 3px solid black;
 }
 
 .carrito {
     position: relative;
+    background-color: azure;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.carrito h3 {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 24px;
+    color: brown;
 }

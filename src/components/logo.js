@@ -1,10 +1,9 @@
 const Sonic = () => {
     return (
       <img
-        src="https://toppng.com/uploads/preview/vintagesonic1-sonic-ring-gif-11562880671bobd49rxah.png"
+        src="https://www.kindpng.com/picc/m/472-4727862_fondo-de-granja-png-transparent-png.png"
         alt="logo"
-        width="100px"
-        borderRadius="50%"
+        width="140px"
       />
     );
   };

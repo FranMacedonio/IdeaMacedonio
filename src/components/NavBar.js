@@ -11,7 +11,7 @@ const NavBar = () => {
             <ul>
                 <li>Inicio</li>
                 <li>Historia</li>
-                <li>Crear Personaje</li>
+                <li>Contactanos</li>
             </ul>
             <div className='carrito'>
                 <ShoppingCartIcon color="success" fontSize="large" />
