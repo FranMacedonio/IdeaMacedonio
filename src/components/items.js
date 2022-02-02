@@ -23,6 +23,9 @@ const MediaCard = ({ data }) => {
         <Typography variant="body1" color="text.secondary">
           {data.description}
         </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          ${data.price}
+        </Typography>
         <Typography variant="body3" color="text.primary">
           Stock: {numero}
         </Typography>
