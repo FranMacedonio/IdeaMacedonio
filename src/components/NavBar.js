@@ -10,7 +10,9 @@ const NavBar = () => {
             <div className='imagen'><Sonic /></div>
             <ul>
                 <li>Inicio</li>
-                <li>Historia</li>
+                <li>Remeras</li>
+                <li>Pantalones</li>
+                <li>Zapatos</li>
                 <li>Contactanos</li>
             </ul>
             <div className='carrito'>

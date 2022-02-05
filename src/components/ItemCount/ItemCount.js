@@ -20,15 +20,18 @@ const Contador = (stock) => {
         }
     }
 
+
+
     return (
-        <>
+        <div className='containerContador'>
             <div className='contador'>
                 <button onClick={restarItem}><RemoveIcon /></button>
                 <p className='numero'>{counter}</p>
                 <button onClick={sumarItem}><AddIcon /></button>
             </div>
+            <h6>Total Price: {22.3 * counter}</h6>
             <button className='agregar'>Agregar al carrito</button>
-        </>
+        </div>
     );
 
 }
