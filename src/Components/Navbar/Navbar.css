@@ -1,0 +1,43 @@
+#navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 48px;
+    height: 100px;
+    
+    background-color: #1d1d1d;
+    color: #e9e9e9;
+}
+
+#logo h1 {
+    transition: 150ms ease-in;
+}
+
+#logo h1:hover {
+    color: #ffffff;
+    text-shadow: -2px 2px 2px #e9e9e9;
+}
+
+#links ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    list-style: none;
+}
+
+#links ul li {
+    transition: 150ms ease-in;
+}
+
+.men:hover {
+    color: rgb(23, 140, 218);
+}
+.women:hover {
+    color: rgb(195, 23, 218);
+}
+.luxary:hover {
+    color: rgb(218, 205, 23);
+}
