@@ -1,8 +1,9 @@
 import React from 'react';
+import ItemList from '../../Components/ItemList/ItemList'
 
 const Men = () => {
   return (
-      <h1>Men's Clothings</h1>
+      <ItemList categoria={1} />
   );
 };
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import ItemList from '../../Components/ItemList/ItemList'
 
 const Luxary = () => {
   return (
-      <h1>Luxary</h1>
+    <ItemList categoria={3} />
   );
 };
 
