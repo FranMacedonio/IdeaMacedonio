@@ -3,8 +3,23 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const ItemCardDetail = ({data}) => {
+    const [contador, setContador] = React.useState(0)
+    
+    const remover = () => {
+        if (contador > 0) {
+            setContador( contador - 1 );
+        }
+    };
+    const agregar = () => {
+        if (contador < 5) {
+            setContador( contador + 1 );
+        }
+    };
+
   return (
     <Card sx={{ maxWidth: 900, display: 'flex' }}>
         <CardMedia
@@ -23,8 +38,13 @@ const ItemCardDetail = ({data}) => {
           <Typography variant="h6" color="text.secondary">
             ${data.price}
           </Typography>
+          <Typography variant="body2" color="text.secondary">
+            In Stock 5
+          </Typography>
           <div id='contador'>
-            <p>Soy un contador</p>
+            <button onClick={remover}><RemoveCircleOutlineIcon /></button>
+            <p>{contador}</p>
+            <button onClick={agregar}><AddCircleOutlineIcon /></button>
           </div>
         </CardContent>
     </Card>

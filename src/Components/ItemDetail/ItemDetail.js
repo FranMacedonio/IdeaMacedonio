@@ -11,9 +11,7 @@ const ItemDetail = () => {
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(res => res.json())
             .then(json => setItem(json))
-    }, [id]);
-
-    console.log(item)
+        }, [id]);
 
     return (
         <div className='itemContainer' key={item.id}>

@@ -41,3 +41,21 @@
 .luxary:hover {
     color: rgb(218, 205, 23);
 }
+
+#cart {
+    position: relative;
+    display: grid;
+}
+
+#cart svg {
+    font-size: 60px;
+}
+
+#cart p{
+    position: absolute;
+    color: #1d1d1d;
+    font-size: 24px;
+    font-weight: 800;
+    right: 23px;
+    top: 5px;
+}
