@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ItemCard from '../ItemCard/ItemCard'
 import './ItemList.css'
+import { Link } from 'react-router-dom';
 
 const ItemList = (categoria) => {
     const [prod, setProd] = useState([])
@@ -18,7 +19,9 @@ const ItemList = (categoria) => {
                         if(item.category === "men's clothing"){
                             return (
                                 <div key={item.id}>
-                                    <ItemCard data={item} />
+                                    <Link to={`/detail/${item.id}`}>
+                                        <ItemCard data={item} />
+                                    </Link>
                                 </div>
                             );
                         }
@@ -34,7 +37,9 @@ const ItemList = (categoria) => {
                         if(item.category === "women's clothing"){
                             return (
                                 <div key={item.id}>
+                                    <Link to={`/detail/${item.id}`}>
                                         <ItemCard data={item} />
+                                    </Link>
                                 </div>
                             );
                         }
@@ -50,7 +55,9 @@ const ItemList = (categoria) => {
                         if(item.category === "jewelery"){
                             return (
                                 <div key={item.id}>
-                                        <ItemCard data={item} />
+                                    <Link to={`/detail/${item.id}`}>
+                                        <ItemCard data={item} /> 
+                                    </Link>
                                 </div>
                             );
                         }
