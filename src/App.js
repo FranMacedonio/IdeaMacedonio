@@ -6,6 +6,7 @@ import Men from './views/men/men'
 import Women from './views/women/women'
 import Luxary from './views/luxary/luxary'
 import ItemDetail from './Components/ItemDetail/ItemDetail'
+import Cart from './views/cart/cart'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/women' element={<Women />} />
           <Route path='/luxary' element={<Luxary />} />
           <Route path='/detail/:id' element={<ItemDetail />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
     </BrowserRouter>

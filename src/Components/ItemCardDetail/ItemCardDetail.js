@@ -3,21 +3,22 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Contador from '../ItemCount/ItemCount'
+import { Link } from 'react-router-dom';
 
 const ItemCardDetail = ({data}) => {
-    const [contador, setContador] = React.useState(0)
-    
-    const remover = () => {
-        if (contador > 0) {
-            setContador( contador - 1 );
-        }
-    };
-    const agregar = () => {
-        if (contador < 5) {
-            setContador( contador + 1 );
-        }
+    const [stock, setStock] = React.useState(5);
+
+    const click = () => {
+      let contadorN = document.querySelector('#contador p').textContent;
+      let contadorM = parseInt(contadorN);
+      setStock( stock - contadorM );
+      let contadorO = document.getElementById('contador');
+      let botonAgregar = document.getElementById('agregar');
+      contadorO.remove();
+      botonAgregar.remove();
+      let compra = document.getElementById('compra');
+      compra.innerHTML = `<p>You get ${contadorM} ${data.title} to the cart for $${data.price * contadorM}.</p>`
     };
 
   return (
@@ -39,13 +40,12 @@ const ItemCardDetail = ({data}) => {
             ${data.price}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            In Stock 5
+            In Stock {stock}
           </Typography>
-          <div id='contador'>
-            <button onClick={remover}><RemoveCircleOutlineIcon /></button>
-            <p>{contador}</p>
-            <button onClick={agregar}><AddCircleOutlineIcon /></button>
-          </div>
+          <Contador stock={stock} />
+          <div id='compra'></div>
+          <button id='agregar' onClick={click}>Get in the cart</button>
+          <Link to={'/cart'}><button>Purchase</button></Link>
         </CardContent>
     </Card>
   );
