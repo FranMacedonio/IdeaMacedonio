@@ -12,13 +12,17 @@ const ItemCardDetail = ({data}) => {
     const click = () => {
       let contadorN = document.querySelector('#contador p').textContent;
       let contadorM = parseInt(contadorN);
-      setStock( stock - contadorM );
-      let contadorO = document.getElementById('contador');
-      let botonAgregar = document.getElementById('agregar');
-      contadorO.remove();
-      botonAgregar.remove();
-      let compra = document.getElementById('compra');
-      compra.innerHTML = `<p>You get ${contadorM} ${data.title} to the cart for $${data.price * contadorM}.</p>`
+      if (contadorM != 0){
+        setStock( stock - contadorM );
+        let contadorO = document.getElementById('contador');
+        let botonAgregar = document.getElementById('agregar');
+        contadorO.remove();
+        botonAgregar.remove();
+        let compra = document.getElementById('compra');
+        compra.innerHTML = `<p>You got ${contadorM} ${data.title} to the cart for $${data.price * contadorM}.</p>`
+      } else {
+        alert(`You must to get more than 0 products!`)
+      }
     };
 
   return (
