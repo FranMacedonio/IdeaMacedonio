@@ -3,7 +3,12 @@ import './Navbar.css'
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+import { useCart } from '../cart/CartContext'
+
 const Navbar = () => {
+
+  const prods = useCart();
+
   return (
       <div id='navbar'>
           <div id='logo'>
@@ -24,10 +29,12 @@ const Navbar = () => {
                   </Link>
               </ul>
           </div>
-          <div id='cart'>
-              <ShoppingCartIcon />
-              <p>0</p>
-          </div>
+          <Link to={'/cart'}>
+            <div id='cart'>
+                <ShoppingCartIcon />
+                <p>{prods.length}</p>
+            </div>
+          </Link>
       </div>
   );
 };

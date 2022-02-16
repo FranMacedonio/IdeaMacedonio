@@ -1,12 +1,12 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './views/home/home'
-import Men from './views/men/men'
-import Women from './views/women/women'
-import Luxary from './views/luxary/luxary'
-import ItemDetail from './Components/ItemDetail/ItemDetail'
-import Cart from './views/cart/cart'
+import Home from './views/home/home';
+import Men from './views/men/men';
+import Women from './views/women/women';
+import Luxary from './views/luxary/luxary';
+import ItemDetail from './Components/ItemDetail/ItemDetail';
+import Cart from './views/cart/cart';
 
 function App() {
   return (

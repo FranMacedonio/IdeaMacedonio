@@ -1,9 +1,19 @@
 import React from 'react'
+import { useCart } from '../../Components/cart/CartContext'
+import CartItems from '../../Components/CartItems/CartItems';
 
 const Cart = () => {
+  const productos = useCart();
+
   return (
-    <h1 style={{textAlign: 'center', margin: '20px'}}>Congratulation!</h1>
+    <div id='cartContent'>
+      {productos.map( prod => {
+        return (
+          <CartItems key={prod.id} producto={prod} />
+        );
+      })}
+    </div>
   )
 }
 
-export default Cart;
+export default Cart
