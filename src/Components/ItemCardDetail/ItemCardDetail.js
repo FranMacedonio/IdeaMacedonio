@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Contador from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom';
 
-import { useDispathCart } from '../cart/CartContext'
+import { useDispathCart, useCart } from '../cart/CartContext'
 
 class Producto {
   constructor (nombre, precio, cantidad, imagen, id){
@@ -20,13 +20,20 @@ class Producto {
 
 const ItemCardDetail = ({data}) => {
 
+    const cart = useCart();
     const dispatch = useDispathCart();
 
     const addToCart = () => {
       const cantidad = parseInt(document.querySelector('#contador p').textContent);
-      let prod = new Producto(data.title, data.price, cantidad, data.image, data.id);
-
-      dispatch({ type: 'ADD', prod});
+      const repetido = Boolean(cart.find(name => name.nombre === data.title));
+      if(cantidad === 0){
+        alert('You must to get something!!')
+      } else if (repetido){
+        alert('You can not take more of these you already have one.. Sorry!!')
+      } else{
+        let prod = new Producto(data.title, data.price, cantidad, data.image, data.id);
+        dispatch({ type: 'ADD', prod});
+      }
     };
 
   return (

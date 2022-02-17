@@ -11,6 +11,10 @@ const Cart = () => {
     dispatch({ type: 'REMOVE', index});
   };
 
+  const clear = () => {
+    dispatch({type: 'CLEAR'})
+  };
+
   if(productos.length === 0) {
     return (
       <h1>El carrito esta vacio</h1>
@@ -24,6 +28,7 @@ const Cart = () => {
         );
       })}
       <h1>Total Price: ${totalPrice}</h1>
+      <button onClick={clear}>Clear Cart</button>
     </div>
   )
 }

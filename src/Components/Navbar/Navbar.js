@@ -9,6 +9,8 @@ const Navbar = () => {
 
   const prods = useCart();
 
+  const productosCarrito = prods.reduce((total,b) => total + b.cantidad, 0);
+
   return (
       <div id='navbar'>
           <div id='logo'>
@@ -32,7 +34,7 @@ const Navbar = () => {
           <Link to={'/cart'}>
             <div id='cart'>
                 <ShoppingCartIcon />
-                <p>{prods.length}</p>
+                <p>{productosCarrito}</p>
             </div>
           </Link>
       </div>

@@ -11,6 +11,9 @@ const reducer = (state, action) => {
             const newArr = [...state];
             newArr.splice(action.index, 1);
             return newArr;
+        case 'CLEAR':
+            const emptyArr = [];
+            return emptyArr;
         default:
             throw new Error (`unknow action ${action.type}`);
     }
