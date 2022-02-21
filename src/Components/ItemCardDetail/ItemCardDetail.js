@@ -4,37 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Contador from '../ItemCount/ItemCount'
-import { Link } from 'react-router-dom';
-
-import { useDispathCart, useCart } from '../cart/CartContext'
-
-class Producto {
-  constructor (nombre, precio, cantidad, imagen, id){
-    this.nombre = nombre;
-    this.precio = precio;
-    this.cantidad = cantidad;
-    this.imagen = imagen;
-    this.id = id;
-  }
-}
 
 const ItemCardDetail = ({data}) => {
-
-    const cart = useCart();
-    const dispatch = useDispathCart();
-
-    const addToCart = () => {
-      const cantidad = parseInt(document.querySelector('#contador p').textContent);
-      const repetido = Boolean(cart.find(name => name.nombre === data.title));
-      if(cantidad === 0){
-        alert('You must to get something!!')
-      } else if (repetido){
-        alert('You can not take more of these you already have one.. Sorry!!')
-      } else{
-        let prod = new Producto(data.title, data.price, cantidad, data.image, data.id);
-        dispatch({ type: 'ADD', prod});
-      }
-    };
+    let randomStock = parseInt(Math.random()*10);
 
   return (
     <Card sx={{ maxWidth: 900, display: 'flex' }}>
@@ -54,10 +26,10 @@ const ItemCardDetail = ({data}) => {
           <Typography variant="h6" color="text.secondary">
             ${data.price}
           </Typography>
-          <Contador />
-          <div id='compra'></div>
-          <button id='agregar' onClick={addToCart}>Add in the cart</button>
-          <Link to={'/cart'}><button>Purchase</button></Link>
+          <Typography id='stockText' variant="body2" color="text.secondary">
+            In Stock <span>{randomStock}</span>
+          </Typography>
+          <Contador stock={randomStock} />
         </CardContent>
     </Card>
   );
