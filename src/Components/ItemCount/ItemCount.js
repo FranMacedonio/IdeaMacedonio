@@ -21,7 +21,7 @@ const Contador = (stock) => {
     }
 
     const click = () => {
-        if (counter != 0){
+        if (counter !== 0){
           let contadorO = document.getElementById('contador');
           let botonAgregar = document.getElementById('agregar');
           contadorO.remove();
