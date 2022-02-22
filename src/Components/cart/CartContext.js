@@ -7,6 +7,8 @@ const reducer = (state, action) => {
     switch (action.type){
         case 'ADD':
             return [...state, action.prod];
+        case 'REFRESH':
+            return [...state];
         case 'REMOVE':
             const newArr = [...state];
             newArr.splice(action.index, 1);

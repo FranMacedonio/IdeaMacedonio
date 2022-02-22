@@ -25,11 +25,16 @@ const ItemCardDetail = ({data}) => {
 
     const addToCart = () => {
       const cantidad = parseInt(document.querySelector('#contador p').textContent);
-      const repetido = Boolean(cart.find(name => name.nombre === data.title));
+      let repetido = cart.find(name => name.nombre === data.title);
+
       if(cantidad === 0){
         alert('You must to get something!!')
       } else if (repetido){
-        alert('You can not take more of these you already have one.. Sorry!!')
+
+        let indexRepetido = cart.indexOf(repetido);
+        cart[indexRepetido].cantidad = cart[indexRepetido].cantidad + cantidad;
+        dispatch({ type: 'REFRESH', cart});
+
       } else{
         let prod = new Producto(data.title, data.price, cantidad, data.image, data.id);
         dispatch({ type: 'ADD', prod});
