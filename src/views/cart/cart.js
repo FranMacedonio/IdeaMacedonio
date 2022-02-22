@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCart, useDispathCart } from '../../Components/cart/CartContext'
 import CartItems from '../../Components/CartItems/CartItems';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const productos = useCart();
@@ -17,7 +18,20 @@ const Cart = () => {
 
   if(productos.length === 0) {
     return (
-      <h1>El carrito esta vacio</h1>
+      <>
+      <ul className='cartContainer'>
+        <Link to='/men' className='men cartText'>
+          Men's
+        </Link>
+        <Link to='/women' className='women cartText'>
+          Women's
+        </Link>
+        <Link to='/luxary' className='luxary cartText'>
+          Luxary
+        </Link>
+      </ul>
+      <h1 style={{textAlign: 'center', marginTop: 50}}>Elige alguna de nuestras opciones para ti</h1>
+      </>
     );
   }
   return (

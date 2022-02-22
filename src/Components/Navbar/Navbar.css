@@ -42,6 +42,17 @@
     color: rgb(218, 205, 23);
 }
 
+.cartContainer{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.cartText {
+    font-size: 48px;
+    margin: 40px;
+
+}
+
 #cart {
     position: relative;
     display: grid;
@@ -58,6 +69,10 @@
     font-weight: 800;
     right: 23px;
     top: 5px;
+}
+
+#cart h3{
+    color: #e0e0e0;
 }
 
 #cartItemContainer {

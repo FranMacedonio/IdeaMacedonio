@@ -32,10 +32,12 @@ const Navbar = () => {
               </ul>
           </div>
           <Link to={'/cart'}>
-            <div id='cart'>
-                <ShoppingCartIcon />
-                <p>{productosCarrito}</p>
-            </div>
+            {productosCarrito == 0 ? (<div id='cart'>
+          <h3>VACIO</h3>
+        </div>) : (<div id='cart'>
+          <ShoppingCartIcon />
+          <p>{productosCarrito}</p>
+        </div>)}
           </Link>
       </div>
   );
