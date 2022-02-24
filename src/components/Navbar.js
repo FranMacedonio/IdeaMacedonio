@@ -10,9 +10,9 @@ const Navbar = () => {
             </div>
         </Link>
         <div id='links'>
-            <Link to={'/remeras'}>Remeras</Link>
-            <Link to={'/pantalones'}>Pantalones</Link>
-            <Link to={'/zapatillas'}>Zapatillas</Link>
+            <Link to={'/categoria/remeras'}>Remeras</Link>
+            <Link to={'/categoria/pantalones'}>Pantalones</Link>
+            <Link to={'/categoria/zapatillas'}>Zapatillas</Link>
         </div>
     </div>
   )
