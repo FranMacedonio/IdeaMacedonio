@@ -8,16 +8,6 @@ import { Link } from 'react-router-dom';
 
 import { useDispathCart, useCart } from '../components/Context'
 
-class Producto {
-  constructor (nombre, precio, cantidad, imagen, id){
-    this.nombre = nombre;
-    this.precio = precio;
-    this.cantidad = cantidad;
-    this.imagen = imagen;
-    this.id = id;
-  }
-}
-
 const ItemCardDetail = ({data}) => {
 
     const cart = useCart();
@@ -36,7 +26,12 @@ const ItemCardDetail = ({data}) => {
         dispatch({ type: 'REFRESH', cart});
 
       } else{
-        let prod = new Producto(data.titulo, data.precio, cantidad, data.imagen, data.id);
+        const prod = {
+          titulo: data.titulo,
+          precio: data.precio,
+          cantidad: cantidad,
+          imagen: data.imagen,
+          id: data.id};
         dispatch({ type: 'ADD', prod});
       }
     };

@@ -28,26 +28,18 @@ const Cart = () => {
     
     const [values, setValues] = useState(initialState);
     const [idCompra, setIdCompra] = useState('');
-    const [comprador, setComprador] = useState();
 
     const onChange = e => {
-        class Comprador {
-            constructor (comprador, productos, total){
-              this.comprador = comprador;
-              this.productos = productos;
-              this.total = total;
-            }
-          }
         const {value, name} = e.target;
         setValues({...values, [name]: value});
-        let ticket = new Comprador (values, productos, totalPrice);
-        setComprador(ticket);
     };
     const onSubmit = async e => {
-        console.log(comprador);
-
         e.preventDefault();
-        const docRef = await addDoc(collection(db, "compra"), {comprador});
+        const docRef = await addDoc(collection(db, "compra"), {
+            comprador: values,
+            productos: productos,
+            total: totalPrice,
+        });
         setIdCompra(docRef.id);
         setValues(initialState);
     };
