@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, query, where, getDocs, documentId } from 'firebase/firestore';
 import { db } from '../firebase'
-import CardComponent from '../components/CardComponent';
+import ItemCardDetail from '../components/ItemCardDetail';
 
 
 const ItemDetail = () => {
@@ -30,7 +30,7 @@ const ItemDetail = () => {
     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         {producto.map( datos => {
             return(
-                <CardComponent data={datos} key={datos.id}/>
+                <ItemCardDetail data={datos} key={datos.id}/>
             );
         })}
     </div>

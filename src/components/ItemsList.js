@@ -32,7 +32,7 @@ const ItemsList = () => {
         {productos.map( datos => {
             return(
                 <Link key={datos.id} to={`/detalles/${datos.id}`}>
-                <CardComponent data={datos}/>
+                    <CardComponent data={datos}/>
                 </Link>
             );
         })}
