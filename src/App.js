@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
 import ItemDetail from './views/ItemDetail';
 import Categoria from './views/Categoria';
+import Cart from './views/Cart';
 
 //COMPONENTS
 import Navbar from './components/Navbar';
@@ -20,6 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/detalles/:id' element={<ItemDetail />} />
         <Route path='/categoria/:categoria' element={<Categoria />} />
       </Routes>

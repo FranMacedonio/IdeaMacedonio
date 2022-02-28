@@ -12,6 +12,9 @@ a {
     text-decoration: unset;
 }
 
+body {
+    background-color: rgb(85, 136, 165);
+}
 /* NAVBAR */
 
 #navbar {
@@ -47,6 +50,9 @@ a {
 }
 #links a:hover{
     color: rgb(194, 194, 194);
+}
+#cart {
+    margin-right: 100px;
 }
 
 /* HOME */

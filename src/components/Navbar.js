@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Navbar = () => {
   return (
@@ -14,6 +15,9 @@ const Navbar = () => {
             <Link to={'/categoria/pantalones'}>Pantalones</Link>
             <Link to={'/categoria/zapatillas'}>Zapatillas</Link>
         </div>
+        <Link id='cart' to={'/cart'}>
+            <ShoppingBasketIcon fontSize="large" />
+        </Link>
     </div>
   )
 }

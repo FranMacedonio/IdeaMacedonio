@@ -27,7 +27,7 @@ const Categoria = () => {
 	}, [categoria]);
 
     return (
-        <div style={{display: 'flex'}}>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         {productos.map( datos => {
             return(
                 <Link key={datos.id} to={`/detalles/${datos.id}`}>
