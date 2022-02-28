@@ -16,29 +16,41 @@ import CartItems from '../components/CartItems';
 
 const initialState = {
     name: '',
-    lastName: '',
+    phone: '',
     mail: ''
 };
 
 const Cart = () => {
-
-    const [values, setValues] = useState(initialState);
-    const [idCompra, setIdCompra] = useState('');
-    const onChange = e => {
-        const {value, name} = e.target;
-        setValues({...values, [name]: value});
-    };
-    const onSubmit = async e => {
-        e.preventDefault();
-        const docRef = await addDoc(collection(db, "compra"), {values});
-        setIdCompra(docRef.id);
-        setValues(initialState);
-    };
-
-
     const productos = useCart();
     const dispatch = useDispathCart();
     const totalPrice = productos.reduce( (total, b) => total + b.precio * b.cantidad, 0);
+
+    
+    const [values, setValues] = useState(initialState);
+    const [idCompra, setIdCompra] = useState('');
+    const [comprador, setComprador] = useState();
+
+    const onChange = e => {
+        class Comprador {
+            constructor (comprador, productos, total){
+              this.comprador = comprador;
+              this.productos = productos;
+              this.total = total;
+            }
+          }
+        const {value, name} = e.target;
+        setValues({...values, [name]: value});
+        let ticket = new Comprador (values, productos, totalPrice);
+        setComprador(ticket);
+    };
+    const onSubmit = async e => {
+        console.log(comprador);
+
+        e.preventDefault();
+        const docRef = await addDoc(collection(db, "compra"), {comprador});
+        setIdCompra(docRef.id);
+        setValues(initialState);
+    };
 
     const remove = index => {
         dispatch({ type: 'REMOVE', index});
@@ -47,7 +59,6 @@ const Cart = () => {
       const clear = () => {
         dispatch({type: 'CLEAR'})
       };
-
   return (
     <>
         <div id='cartContent'>
@@ -67,7 +78,7 @@ const Cart = () => {
         >
             <div style={{display: 'flex', flexDirection: 'column', width: '50%', margin: 'auto', marginTop: '50px'}}>
                 <TextField onChange={onChange} value={values.name} name='name' id="filled-basic" label="Name" variant="filled" />
-                <TextField onChange={onChange} value={values.lastName} name='lastName' id="filled-basic" label="Last Name" variant="filled" />
+                <TextField onChange={onChange} value={values.phone} name='phone' id="filled-basic" label="Phone" variant="filled" />
                 <TextField onChange={onChange} value={values.mail} name='mail' id="filled-basic" label="Mail" variant="filled" />
                 <button>Realizar Compra</button>
             </div>
